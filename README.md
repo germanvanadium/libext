@@ -2,9 +2,6 @@
 This library can be used to parse .ext files in your project and extract the necessary informations from it!<br>
 
 ## Building 🔨
-### Wii U 🎮
-`make WIIU && make install` this will compile the library for Wii U and install it to `\opt\devkitpro\wut\usr\`<br>
-To use the library add `-lmocha` to `LIBS` and `$(WUT_ROOT)/usr` to `LIBDIRS` in your makefile.<br>
 ### Windows 🖥️
 `make WIN && make install %PATH%` this will compile the library for Windows and install it to `%PATH%`<br>
 To use the library just link it as any other library in your Makefile and add it to your Includes<br>
@@ -83,5 +80,4 @@ int main(int argc, char **argv) {
 
 ## Credits
 [germanvanadium](https://github.com/germanvanadium) - made the library itself<br>
-[Maschell](https://github.com/wiiu-env) - I copied the Wii U Makefile from<br>
 [Cloncurry](https://www.reddit.com/user/Cloncurry/) and [alfps](https://www.reddit.com/user/alfps/) - on Reddit for troubleshooting
