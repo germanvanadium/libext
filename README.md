@@ -19,6 +19,7 @@ It's essentially the metadata for a Minecraft Wii U World and contains data like
 - Texturepacks
 - Links with images attached to it (Usage ???)
 - Deflate Compressed Data (needs more research)
+- Unknown Extra Data (between the World Name and World Image)
 
 #### World Name - Details
 The World Name is stored from 0x00 to 0x32 and before each byte is a null-character, example:<br>
