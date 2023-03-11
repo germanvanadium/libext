@@ -1,5 +1,7 @@
-# libext | A EXT-File parser library
+# libext | A C++ EXT-File parser library
 This library can be used to parse .ext files in your project and extract the necessary informations from it!<br>
+<br>
+⚠️ This will not compile under C only use this on C++ projects<br>
 
 ## Building 🔨
 ### Windows 🖥️
