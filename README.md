@@ -62,25 +62,31 @@ int main(int argc, char **argv) {
     }
 
     EXTFile* file = loadEXT(argv[1]);
+
     if(!file) {
         std::cout << "File " << argv[1] << " not found!" << std::endl;
         return -1;
     }
 
     std::cout << "World Name: " << file->readWorldName() << std::endl;
-    std::cout << "World Seed: " << file->readData("SEED").data() << std::endl;
-    std::cout << "Host Options: " << file->readData("HOSTOPTIONS").data() << std::endl;
-    std::cout << "Texturepack: " << file->readData("TEXTUREPACK").data() << std::endl;
-    std::cout << "Extradata: " << file->readData("EXTRADATA").data() << std::endl;
+    EXTData seed = file->readData("SEED");
+    std::cout << "World Seed: " << std::string_view(seed.data(), seed.size()) << std::endl;
+    EXTData hostOptions = file->readData("HOSTOPTIONS");
+    std::cout << "Host Options: " << std::string_view(hostOptions.data(), hostOptions.size()) << std::endl;
+    EXTData texturePack = file->readData("TEXTUREPACK");
+    std::cout << "Texture Pack: " << std::string_view(texturePack.data(), texturePack.size()) << std::endl;
+    EXTData extraData = file->readData("EXTRADATA");
+    std::cout << "Extra Data: " << std::string_view(extraData.data(), extraData.size()) << std::endl;
     EXTPNG png = file->readWorldImage();
     std::cout << "Image size: " << png.size() << std::endl;
-    std::cout << "Image data: " << png.data() << std::endl;
+    std::cout << "Image data: " << std::string_view(png.data(), png.size()) << std::endl;
 
     freeEXT(file);
     return 0;
 }
 ```
+> ℹ️ As you can see in the example, it is recommended to store EXTData & EXTPNG and when trying to access them use a std::string_view because this data is not null-terminated so it may lead into complications when trying to output it!
 
 ## Credits
 [germanvanadium](https://github.com/germanvanadium) - made the library itself<br>
-[Cloncurry](https://www.reddit.com/user/Cloncurry/) and [alfps](https://www.reddit.com/user/alfps/) - on Reddit for troubleshooting
+[Cloncurry](https://www.reddit.com/user/Cloncurry/), [alfps](https://www.reddit.com/user/alfps/), [dsdf98sd7](https://www.reddit.com/user/dsdf98sd7/) and [Different-Brain-9210](https://www.reddit.com/user/Different-Brain-9210/) - on Reddit for troubleshooting
