@@ -87,6 +87,9 @@ int main(int argc, char **argv) {
 ```
 > ℹ️ As you can see in the example, it is recommended to store EXTData & EXTPNG and when trying to access them use a std::string_view because this data is not null-terminated so it may lead into complications when trying to output it!
 
+## Licensing 🔑
+This library is licensed under [MIT](https://github.com/germanvanadium/libext/blob/main/LICENSE)
+
 ## Credits
 [germanvanadium](https://github.com/germanvanadium) - made the library itself<br>
 [Cloncurry](https://www.reddit.com/user/Cloncurry/), [alfps](https://www.reddit.com/user/alfps/), [dsdf98sd7](https://www.reddit.com/user/dsdf98sd7/) and [Different-Brain-9210](https://www.reddit.com/user/Different-Brain-9210/) - on Reddit for troubleshooting
