@@ -23,14 +23,14 @@ It's essentially the metadata for a Minecraft Wii U World and contains data like
 
 #### World Name - Details
 The World Name is stored from 0x00 to 0x32 and before each byte is a null-character, example:<br>
-![Hex View](https://github.com/germanvanadium/libext/blob/master/namehex.png?raw=true)<br>
+![Hex View](https://github.com/germanvanadium/libext/blob/master/photos/namehex.png?raw=true)<br>
 The World Name sections gets ended by two null-characters (this gets used by the library to know when the name ends)<br>
 
 #### World Image - Details
 The World Image is stored from 0x100 to a unknown position (depending on the size of the image) and is standard PNG data.<br>
 The image has dimensions of 64x64 with a bitdepth of 32<br>
 The World Name sections gets ended by three null-characters (this is unprecise tho because the image itself could also contain three null-characters so the library searches for \0\0\0(CHARACTER MAY VARY)(CHARACTER MAY VARY)EXt4J instead to determine the image size)<br>
-![Hex View](https://github.com/germanvanadium/libext/blob/master/image_section.png?raw=true)<br>
+![Hex View](https://github.com/germanvanadium/libext/blob/master/photos/image_section.png?raw=true)<br>
 
 ## Documentation
 `EXTFile* loadEXT(const char* filename);` returns a EXTFile pointer if successful otherwise returns a nullptr<br>
