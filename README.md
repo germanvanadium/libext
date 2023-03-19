@@ -8,7 +8,7 @@ This library can be used to parse .ext files in your project and extract the nec
 `make WIN && make install %PATH%` this will compile the library for Windows and install it to `%PATH%`<br>
 To use the library just link it as any other library in your Makefile and add it to your Includes<br>
 
-## The EXT-File
+## The EXT-File 📝
 The EXT-File is a file type introduced by 4J Studios in Minecraft: Wii U-Edition.
 It's essentially the metadata for a Minecraft Wii U World and contains data like:
 
@@ -32,7 +32,7 @@ The image has dimensions of 64x64 with a bitdepth of 32<br>
 The World Name sections gets ended by three null-characters (this is unprecise tho because the image itself could also contain three null-characters so the library searches for \0\0\0(CHARACTER MAY VARY)(CHARACTER MAY VARY)EXt4J instead to determine the image size)<br>
 ![Hex View](https://github.com/germanvanadium/libext/blob/master/photos/image_section.png?raw=true)<br>
 
-## Documentation
+## Documentation 📚
 `EXTFile* loadEXT(const char* filename);` returns a EXTFile pointer if successful otherwise returns a nullptr<br>
 `void freeEXT(EXTFile* ext);` closes an EXTFile and cleans everything up<br>
 
